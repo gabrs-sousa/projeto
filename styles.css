@@ -1,0 +1,209 @@
+/* Reset básico para remover margens e paddings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* Estilizando o cabeçalho */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: white;
+    padding: 10px 20px;
+    border-bottom: 2px solid #ddd;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 50px;
+    margin-right: 10px;
+}
+
+.logo span {
+    font-weight: bold;
+    color: #006400; /* cor verde escura */
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin: 0 10px;
+}
+
+.nav-links a {
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px;
+}
+
+.nav-links a:hover {
+    color: #006400; /* cor verde escura */
+    border-bottom: 2px solid #006400;
+}
+
+/* Estilizando o container principal */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin: 20px;
+}
+
+.ranking, .simulacoes {
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    background: #fff;
+    flex: 1;
+}
+
+.ranking {
+    margin-right: 20px;
+}
+
+.simulacoes {
+    margin-left: 20px;
+}
+
+h2 {
+    margin-top: 0;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Estilizando o carrossel */
+.carousel {
+    position: relative;
+    max-width: 100%; /* Largura máxima do carrossel */
+    max-height: 520px; /* Altura máxima do carrossel */
+    margin: 0 auto;
+    overflow: hidden;
+    border: 1px solid #ddd; /* Borda do carrossel */
+}
+
+.carousel input[type="radio"] {
+    display: none;
+}
+
+.carousel-slides {
+    display: flex;
+    transition: transform 1s ease-in-out;
+}
+
+.carousel-slide {
+    min-width: 100%;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.carousel-slide img {
+    width: 100%;
+    display: block;
+}
+
+.btn {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #006400;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.carousel-nav {
+    text-align: center;
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+}
+
+.carousel-dot {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin: 5px;
+    background-color: #ddd;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+#masculino:checked ~ .carousel-slides {
+    transform: translateX(0);
+}
+
+#feminino:checked ~ .carousel-slides {
+    transform: translateX(-100%);
+}
+
+#smasculino:checked ~ .carousel-slides {
+    transform: translateX(-200%);
+}
+
+#sfeminino:checked ~ .carousel-slides {
+    transform: translateX(-300%);
+}
+
+#masculino:checked ~ .carousel-nav label[for="masculino"],
+#feminino:checked ~ .carousel-nav label[for="feminino"],
+#smasculino:checked ~ .carousel-nav label[for="smasculino"],
+#sfeminino:checked ~ .carousel-nav label[for="sfeminino"] {
+    background-color: #006400;
+}
+
+/* Estilizando a seção "Sobre" */
+.sobre {
+    padding: 20px;
+    text-align: center;
+    background-color: #f9f9f9;
+    border-top: 2px solid #ddd;
+}
+
+/* Estilizando o rodapé */
+footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    padding: 10px 20px;
+    border-top: 2px solid #ddd;
+    text-align: center;
+}
+
+footer p {
+    margin: 0;
+}
+
+footer a {
+    color: #006400;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
