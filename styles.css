@@ -9,7 +9,6 @@ body {
     font-family: Arial, sans-serif;
 }
 
-/* Estilizando o cabeçalho */
 header {
     display: flex;
     align-items: center;
@@ -31,7 +30,7 @@ header {
 
 .logo span {
     font-weight: bold;
-    color: #006400; /* cor verde escura */
+    color: #006400; 
 }
 
 .nav-links {
@@ -51,11 +50,10 @@ header {
 }
 
 .nav-links a:hover {
-    color: #006400; /* cor verde escura */
+    color: #006400; 
     border-bottom: 2px solid #006400;
 }
 
-/* Estilizando o container principal */
 .container {
     display: flex;
     justify-content: center;
@@ -94,14 +92,13 @@ th, td {
     border-bottom: 1px solid #ddd;
 }
 
-/* Estilizando o carrossel */
 .carousel {
     position: relative;
-    max-width: 100%; /* Largura máxima do carrossel */
-    max-height: 520px; /* Altura máxima do carrossel */
+    max-width: 100%; 
+    max-height: 620px; 
     margin: 0 auto;
     overflow: hidden;
-    border: 1px solid #ddd; /* Borda do carrossel */
+    border: 1px solid #ddd; 
 }
 
 .carousel input[type="radio"] {
@@ -110,71 +107,88 @@ th, td {
 
 .carousel-slides {
     display: flex;
-    transition: transform 1s ease-in-out;
-}
-
-.carousel-slide {
-    min-width: 100%;
-    box-sizing: border-box;
-    position: relative;
-}
-
-.carousel-slide img {
+    width: 400%; /* 4 slides */
+    height: 100%;
+    transition: transform 0.5s ease-in-out;
+  }
+  
+  .slide {
     width: 100%;
-    display: block;
-}
-
-.btn {
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: #006400;
-    color: white;
-    padding: 10px 20px;
-    text-decoration: none;
-    border-radius: 5px;
-}
-
-.carousel-nav {
-    text-align: center;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    background-color: #f2f2f2;
+  }
+  
+  input[type="radio"] {
+    display: none;
+  }
+  
+  .nav {
     position: absolute;
     bottom: 10px;
-    width: 100%;
-}
-
-.carousel-dot {
-    display: inline-block;
-    width: 10px;
-    height: 10px;
-    margin: 5px;
-    background-color: #ddd;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+  }
+  
+  .nav label {
+    width: 15px;
+    height: 15px;
     border-radius: 50%;
+    background-color: #bbb;
+    margin: 0 5px;
     cursor: pointer;
-}
-
-#masculino:checked ~ .carousel-slides {
-    transform: translateX(0);
-}
-
-#feminino:checked ~ .carousel-slides {
+  }
+  
+  input#slide1:checked ~ .slides {
+    transform: translateX(0%);
+  }
+  
+  input#slide2:checked ~ .slides {
     transform: translateX(-100%);
-}
-
-#smasculino:checked ~ .carousel-slides {
+  }
+  
+  input#slide3:checked ~ .slides {
     transform: translateX(-200%);
-}
-
-#sfeminino:checked ~ .carousel-slides {
+  }
+  
+  input#slide4:checked ~ .slides {
     transform: translateX(-300%);
-}
-
-#masculino:checked ~ .carousel-nav label[for="masculino"],
-#feminino:checked ~ .carousel-nav label[for="feminino"],
-#smasculino:checked ~ .carousel-nav label[for="smasculino"],
-#sfeminino:checked ~ .carousel-nav label[for="sfeminino"] {
-    background-color: #006400;
-}
+  }
+  
+  input#slide1:checked ~ .nav label[for="slide1"],
+  input#slide2:checked ~ .nav label[for="slide2"],
+  input#slide3:checked ~ .nav label[for="slide3"],
+  input#slide4:checked ~ .nav label[for="slide4"] {
+    background-color: #333;
+  }
+  
+  /* Animação automática */
+  @keyframes slideAnimation {
+    0%, 20% {
+      transform: translateX(0%);
+    }
+    25%, 45% {
+      transform: translateX(-100%);
+    }
+    50%, 70% {
+      transform: translateX(-200%);
+    }
+    75%, 95% {
+      transform: translateX(-300%);
+    }
+    100% {
+      transform: translateX(0%);
+    }
+  }
+  
+  .slides {
+    animation: slideAnimation 20s infinite;
+  }
 
 /* Estilizando a seção "Sobre" */
 .sobre {
